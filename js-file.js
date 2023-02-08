@@ -12,9 +12,17 @@ function createGrid(height, width){
     }
 }
 
+function hoverEffect(){
+    const hover = Array.from(document.querySelectorAll('.test'));
+    for (const div of hover) {
+        div.addEventListener("mouseover", function() {
+        this.style.backgroundColor = 'red';
+        });
+    }
+}
 
 
 createGrid(16, 32);
-
+hoverEffect();
 
 

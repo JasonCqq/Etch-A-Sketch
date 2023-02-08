@@ -29,10 +29,6 @@ function hoverEffect(){
         columns.addEventListener('mouseenter', () => {
             columns.style.backgroundColor = 'red';
         })
-    
-        columns.addEventListener('mouseleave', () => {
-            columns.style.backgroundColor = 'white';
-        })
     }
 }
 

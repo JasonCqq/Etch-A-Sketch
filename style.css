@@ -1,0 +1,14 @@
+#grid-container{
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#grid-container .test {
+    background-color: black;
+    width: 25px;
+    height: 25px;
+}
+
+
+

@@ -1,5 +1,5 @@
 function createGrid(gridHeight, gridWidth){
-    document.getElementById("grid-container").innerHTML = '';
+    document.getElementById("grid-container").innerHTML = " ";
     for (let i = 1; i <= gridWidth; i++) {
         const rowCreate = document.createElement("div");
         rowCreate.setAttribute('id', `row row${i}`)
@@ -11,15 +11,7 @@ function createGrid(gridHeight, gridWidth){
             rowCreate.appendChild(divCreate);
         }
     }
-}
-
-function hoverEffect(){
-    const hover = Array.from(document.querySelectorAll('.test'));
-    for (const div of hover) {
-        div.addEventListener("mouseover", function() {
-        this.style.backgroundColor = 'red';
-        });
-    }
+    hoverEffect();
 }
 
 function changeSize(){
@@ -31,6 +23,25 @@ function changeSize(){
     });
 }
 
+function hoverEffect(){
+    const column = Array.from(document.querySelectorAll('.test'));
+    for (const columns of column) {
+        columns.addEventListener('mouseenter', () => {
+            columns.style.backgroundColor = 'red';
+        })
+    
+        columns.addEventListener('mouseleave', () => {
+            columns.style.backgroundColor = 'white';
+        })
+    }
+}
+
+createGrid(16, 16);
 changeSize();
 hoverEffect();
+
+
+
+
+
 

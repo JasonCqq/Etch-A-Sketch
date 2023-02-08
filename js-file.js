@@ -1,9 +1,10 @@
-function createGrid(height, width){
-    for (let i = 1; i <= width; i++) {
+function createGrid(gridHeight, gridWidth){
+    document.getElementById("grid-container").innerHTML = '';
+    for (let i = 1; i <= gridWidth; i++) {
         const rowCreate = document.createElement("div");
         rowCreate.setAttribute('id', `row row${i}`)
         document.getElementById("grid-container").appendChild(rowCreate);
-        for (let i = 0; i <= height; i++) {
+        for (let i = 0; i <= gridHeight; i++) {
             const divCreate = document.createElement("div");
             divCreate.setAttribute('class', `test test${i}`);
             divCreate.appendChild(document.createTextNode(""));
@@ -21,8 +22,15 @@ function hoverEffect(){
     }
 }
 
+function changeSize(){
+    document.getElementById("submit-btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        let height = parseInt(document.getElementById("grid-height").value);
+        let width = parseInt(document.getElementById("grid-width").value);
+        createGrid(height, width);
+    });
+}
 
-createGrid(16, 32);
+changeSize();
 hoverEffect();
-
 
